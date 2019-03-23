@@ -1,0 +1,36 @@
+Tree
+Print Left View of Binary Tree - having a max-value which indicates what is the current max left level. increase that max level on encoutering new max 
+Check for BST - Do inorder traversal. u will get a array in ascending order
+Print Bottom View of Binary Tree - Have a additional param in Node which stored horizontal distance from the center. Use a map where key is Vertical distance. on encountering a new node check for a entery in map. if there is a entry with horizontal level less, replace that value in map, else if they are same, append a value to it. use a TreeMap for ordering the elements according to the keys
+Print a Binary Tree in Vertical Order - Use a map which stores the Horizontal distance as a key and nodes as its values
+Level order traversal in spiral form - Use 2 stacks. and insert into them alternatively
+Connect Nodes at Same Level - need to explore
+Lowest Common Ancestor in a BST - simple. traverse a tree. the first node that you encounter a value that is between the given 2 nodes, print that
+Convert a given Binary Tree to Doubly Linked List - have a prev pointer. recursively call the left subtree. when prev in null, make head of DLL as root. else root.left = prev, prev.right = root, finally prev = root. then recursively call right subtree.
+Write Code to Determine if Two Trees are Identical or Not = start with 2 ptrs for the root node. if two ptrs are null, return true. else, check 2 ptrs data to be same && recursively call right && recursively call left. 
+Given a binary tree, check whether it is a mirror of itself - same as before problem. while calling recursively, call left + right && right + left.
+Height of Binary Tree - traverse the tree, maintain max height. 
+Maximum Path Sum - https://www.geeksforgeeks.org/find-maximum-path-sum-in-a-binary-tree/ - maintain left_sum (l), right_sum (r). max_l_r = max(l, r). max_/curr_l_or_r/_/curr_l_r/. return that value.
+Diameter of a Binary Tree - explore
+Number of leaf nodes - if left and right child are null, increase leaf node count.
+Check if given Binary Tree is Height Balanced or Not - explore
+Serialize and Deserialize a Binary Tree - explore
+
+DP
+Longest Increasing Subsequence
+Longest Common Subsequence
+0 – 1 Knapsack Problem
+Minimum number of jumps
+Edit Distance
+Coin Change Problem
+Egg Dropping Puzzle
+Tiling Problem
+Minimum number of jumps to reach end
+
+Sort
+Insertion sort
+
+Others
+Median of running numbers
+Snake and ladder
+LRU implementation
