@@ -30,7 +30,38 @@ Minimum number of jumps to reach end
 Sort
 Insertion sort
 
+Parenthesis Checker - use a stack. single stack will do.
+Reverse words in a given string - Native idea is to reverse individual words in the string. then reverse the whole string. New idea is to use split operator in java. use that and store split words in a array. traverse the array for last and start appending to a empty string.
+Permutations of a given string - swap the characters with a fixed variable. start with fixed variable as 0; if fixed == size of str, return. Run a loop from i=fixed to size, swap (str, i, fixed), call recursively with fixed incremented by 1, again backtrack the swap.
+Longest Palindrome in a String - explore
+Recursively remove all adjacent duplicates - can do
+Check if string is rotated by two places- can do
+Roman Number to Integer- can do
+Anagram- can do
+Longest Common Substring - explore
+Remove Duplicates- can do
+Form a Palindrome - explore
+Longest Distinct Characters in the string - explore
+Implement Atoi 
+Implement strstr - can do
+Longest Common Prefix - explore
+
+
+Linked list:
+Detecting cycle in a list. Have 2 ptrs "slow and fast". increment slow ptr by 1 and fast ptr by 2. at some point if they meet, there is a loop. (Reason why it works..) initial distance between 2 nodes will be 1, then 2, then 3 then finally n(size of list). At n, they both meet.
+
+ 
 Others
 Median of running numbers
 Snake and ladder
 LRU implementation
+Find Transition Point - use binary search
+Search an element in an array where difference between adjacent elements is 1 - start with the start index. find diff between given number and current index. jump to that index.
+finding square root - do binary search
+Finding kth largest element in the tree- do inorder traversal. maitain count of node visite. stop when count becomes k
+Connect n ropes with minimum cost - implemet huffman coding usin min heap
+
+Theory:
+heap memory allocation: https://dzone.com/articles/stack-vs-heap-understanding-java-memory-allocation
+dangling pointer - https://stackoverflow.com/questions/4976668/creating-a-dangling-pointer-using-java
+paging from operating systems - explore

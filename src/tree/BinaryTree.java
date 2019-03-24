@@ -48,10 +48,15 @@ public class BinaryTree {
 		//binaryTree.inorder(root);
 		
 		//preorder
-		binaryTree.preorder(root);
+		//binaryTree.preorder(root);
 		
 		//postorder
 		//binaryTree.postorder(root);
+		
+		System.out.println((int)'a');
+		System.out.println((int)'d');
+		System.out.println('a' ^ 'd');
+		System.out.println(97 ^ 100);
 		
 		
 	}
