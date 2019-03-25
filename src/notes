@@ -1,6 +1,6 @@
 Tree
 Print Left View of Binary Tree - having a max-value which indicates what is the current max left level. increase that max level on encoutering new max 
-Check for BST - Do inorder traversal. u will get a array in ascending order
+Check for BST - (1) traverse the tree, with the min and max values that can exist for a node.   (2) Do inorder traversal. u will get a array in ascending order 
 Print Bottom View of Binary Tree - Have a additional param in Node which stored horizontal distance from the center. Use a map where key is Vertical distance. on encountering a new node check for a entery in map. if there is a entry with horizontal level less, replace that value in map, else if they are same, append a value to it. use a TreeMap for ordering the elements according to the keys
 Print a Binary Tree in Vertical Order - Use a map which stores the Horizontal distance as a key and nodes as its values
 Level order traversal in spiral form - Use 2 stacks. and insert into them alternatively
@@ -15,7 +15,9 @@ Diameter of a Binary Tree - explore
 Number of leaf nodes - if left and right child are null, increase leaf node count.
 Check if given Binary Tree is Height Balanced or Not - explore
 Serialize and Deserialize a Binary Tree - explore
-
+construct a bst from given preorder. https://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversa/  best way is to have min and max value. over every recursion check ifthe curr value belongs lies between min and max. if yes, create a node. Start with root = value. recur for root.right and root.left
+construct a binary tree from given preorder and inorder -  https://www.geeksforgeeks.org/construct-tree-from-given-inorder-and-preorder-traversal/ same like above. Use a map to get the index of the current value from inorder array. recur with obtained index. use the preorder to get the next node value
+ 
 DP
 Longest Increasing Subsequence
 Longest Common Subsequence
@@ -33,14 +35,13 @@ Insertion sort
 Parenthesis Checker - use a stack. single stack will do.
 Reverse words in a given string - Native idea is to reverse individual words in the string. then reverse the whole string. New idea is to use split operator in java. use that and store split words in a array. traverse the array for last and start appending to a empty string.
 Permutations of a given string - swap the characters with a fixed variable. start with fixed variable as 0; if fixed == size of str, return. Run a loop from i=fixed to size, swap (str, i, fixed), call recursively with fixed incremented by 1, again backtrack the swap.
-Longest Palindrome in a String - explore
+Longest Palindrome in a String - (1) O(n2) Initalize t[i][i] as true. make t[i][i+1] as true when the cosecutive character match. make t[i][j] as true only if t[i+1][j-1] is true and the str[i] and str[j] are same. Find max length as (i-j+1)(2) Mancher algo - O(n) explore
 Recursively remove all adjacent duplicates - can do
 Check if string is rotated by two places- can do
 Roman Number to Integer- can do
 Anagram- can do
-Longest Common Substring - explore
 Remove Duplicates- can do
-Form a Palindrome - explore
+Minimum numb of inseriton to Form a Palindrome - (1) do lcs of the str and rev of the str. no of insertions required = lcs - str.length (2) base cases- l==h, l==h-1 and str[l] == str[h-1] ; minInsertions(str[l+1…..h-1]) - if str[l] is equal to str[h]; min(minInsertions(str[l…..h-1]), minInsertions(str[l+1…..h])) + 1 otherwise
 Longest Distinct Characters in the string - explore
 Implement Atoi 
 Implement strstr - can do
@@ -54,14 +55,31 @@ Detecting cycle in a list. Have 2 ptrs "slow and fast". increment slow ptr by 1 
 Others
 Median of running numbers
 Snake and ladder
-LRU implementation
+LRU implementation - explore
 Find Transition Point - use binary search
 Search an element in an array where difference between adjacent elements is 1 - start with the start index. find diff between given number and current index. jump to that index.
 finding square root - do binary search
 Finding kth largest element in the tree- do inorder traversal. maitain count of node visite. stop when count becomes k
 Connect n ropes with minimum cost - implemet huffman coding usin min heap
+Find the first non-repeating character from a stream of characters - use a dll. the head of dll should always point to the 1st non repating character. whenever a new character enter, chk for its occurence. if not occured, create a dll and store. else. remove node from dll.
+Check if given Sudoku board configuration is valid or not - traverse the entire array. check whether in the current row, current column, current box the element already exists
+Print matrix in diagonal pattern - can do
+Given an array that is first increasing then decreasing, find an element in it. - use 3 binary search
+Sort an array of 0s, 1s and 2s - (1) count the nos and arrange them, (2) Dutch flag algo. Have 2 params low=0; mid=0; high=n-1. if mid=0, swap low and mid, increment both. if mid=1, increment mid. if mid=2, swap high and mid, decrement high;
+Form minimum number from given sequence - explore
+Submatrix Sum Queries - https://www.geeksforgeeks.org/submatrix-sum-queries/ compute the sum from (0,0) to (x,y)
+Merge k sorted arrays - use min heap and store all the 1st elements of all subarrays. after the min value is extracted, add the next element from where element was removed
+Next Greater Element - Use a stack. push 1st element in stack. while the next element is not greater the top element, push into the stack. once it is greater, pop all the elements from stack and print their next greater elelment. finally push the element into the stack
+Convert a given tree to its Sum Tree - traverse like inorder. maintain the old_node value. current node will be sum of left and right recursion. finally return (node.value + old_node)
+Clone a linked list with next and random pointer - by inserting a node in bewtenen the consecutive nodes. then make a map to their random pointers
+Minimum Number of Platforms Required for a Railway/Bus Station - sort both the arr and departure arr. start like merge sort, if curr_arr is less than curr_dep -> platform_count++ else, platform_count--. return max platform_count
+Maximum element in min heap - always, max element will be present in leaf nodes. for traverse the leaf to find max. There are always ceil(n/2) leaf nodes in a heap.
+Print the last k nodes of the linked list in reverse order - (1) recursion. (2) use a stack and push all elements. later pop only k elements. (2) use 2 ptrs. one at beginning, one at k node at last. traverse both the ptrs. !!!!!very imp
+Number of special nodes in an n-ary tree - use xor operation strategy while traversing the tree
 
 Theory:
 heap memory allocation: https://dzone.com/articles/stack-vs-heap-understanding-java-memory-allocation
 dangling pointer - https://stackoverflow.com/questions/4976668/creating-a-dangling-pointer-using-java
 paging from operating systems - explore
+There is a irregular, haphazard, shapeless cake that needs to be divided equally among n people. Say you are one among them. How do you achieve consensus? - make a regular shape out of the cake. and divide them.
+There are always ceil(n/2) leaf nodes in a heap.
